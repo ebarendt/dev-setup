@@ -15,4 +15,6 @@ services:
 volumes:
   data:
 
- 
+networks:
+  default:
+    enable_ipv6: true
