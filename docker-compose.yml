@@ -8,9 +8,12 @@ services:
     shm_size: 128mb
     volumes:
       - ${PWD}/data:/var/lib/postgresql/data:Z
+    userns_mode: keep-id
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+x-podman:
+  in_pod: false
 
 networks:
   default:
